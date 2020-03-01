@@ -27,7 +27,8 @@ class TriviaTestCase(unittest.TestCase):
             'gender': 1
         }
 
-        self.ExecutiveProducer = 'Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IlEwVTBOVVEzTlRjM1FrSkROVVZDUmpKQk1VSkNNekkyT0RReFFqa3dPVFJDT1RVME1UbEVSUSJ9.eyJpc3MiOiJodHRwczovL2Rldi1seGYuYXV0aDAuY29tLyIsInN1YiI6ImF1dGgwfDVlMTA3OGUwYjk3ZTI2MGU5OTlmY2JhNSIsImF1ZCI6Im1vdmllIiwiaWF0IjoxNTgyOTg5MTA1LCJleHAiOjE1ODMwNzU1MDUsImF6cCI6Ikhzb05CeDR0a0kycjBDOEk2QmVyRXg3UXY1eWJOQzdvIiwic2NvcGUiOiIiLCJwZXJtaXNzaW9ucyI6WyJkZWxldGU6YWN0b3IiLCJkZWxldGU6bW92aWUiLCJwb3N0OmFjdG9yIiwicG9zdDptb3ZpZSIsInB1dDphY3RvciIsInB1dDptb3ZpZSJdfQ.j4TWOrfE0tstmlAfi2XYsv7y00Cdv09u4VU7cP_ZAu6nUeEY3c73EyGtgonNjDkKFJHkAUnfAOMrU9Jd9UnO43-u8OasTqVPuNQwlhM1awOn_Xqc9nzSX6XcCjeORhyPVUQR0s21miio-V7uKQAOxOZQkmyXHc8gEft2zoTV8W98J7gKdMnpEWzetx2YMlFzHtjU1SQPQR0kSdR_A_CGOa9ck91BjkWFl5EApSDzW1dnxvM1dDXcNEba1sAUC7A6ubbqcS3Z_Nm17c58iE3E2SoMEzUYlz97boG0d_1EHcsP4Wdh0CKjxac0afff_mGqTDV3iC6oEyDUjvMhKksDLw'
+        self.ExecutiveProducer = 'Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IlEwVTBOVVEzTlRjM1FrSkROVVZDUmpKQk1VSkNNekkyT0RReFFqa3dPVFJDT1RVME1UbEVSUSJ9.eyJpc3MiOiJodHRwczovL2Rldi1seGYuYXV0aDAuY29tLyIsInN1YiI6ImF1dGgwfDVlMTA3OGUwYjk3ZTI2MGU5OTlmY2JhNSIsImF1ZCI6Im1vdmllIiwiaWF0IjoxNTgzMDUzOTM2LCJleHAiOjE1ODMxNDAzMzYsImF6cCI6Ikhzb05CeDR0a0kycjBDOEk2QmVyRXg3UXY1eWJOQzdvIiwic2NvcGUiOiIiLCJwZXJtaXNzaW9ucyI6WyJkZWxldGU6YWN0b3IiLCJkZWxldGU6bW92aWUiLCJwb3N0OmFjdG9yIiwicG9zdDptb3ZpZSIsInB1dDphY3RvciIsInB1dDptb3ZpZSJdfQ.gbkksdS_zdwQKAKnDOKyHoYi4l7ozvcCHx5C_u9Cj9C6bw6nDLx0S1g984MIzWTASjyrEyzAlX5uO2_g74TBS-IF3RO1aXBHQxIFtFzetF04qM59copyOLqQGnKmKGZAlZaYDEjbgbIAnSSpMG9MClcKzOWHFD5sQMNin1L4kimM5U2ub2-uOP1t2OTVEfXMrRLCvnOnQrbu79c4KfcDt112D93BRv8b3kXvpgjeICAdPQmvic5TdoQthY8sFQMpbQSRX8JScbUvimIN_-SH0sekJ40zfKr3oYpmW8QXi5N5o0O_CXFZk7slN_zpYw4EqBSivrvVRIxXwK0Y-igzqw'
+        self.CastingDirector = 'Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IlEwVTBOVVEzTlRjM1FrSkROVVZDUmpKQk1VSkNNekkyT0RReFFqa3dPVFJDT1RVME1UbEVSUSJ9'
 
     def tearDown(self):
         """Executed after reach test"""
@@ -53,7 +54,7 @@ class TriviaTestCase(unittest.TestCase):
     def test_add_actor(self):
         res = self.client().post('/actor',
                                  json=self.new_actor,
-                                 headers={'Authorization': self.ExecutiveProducer})
+                                 headers={'Authorization': self.CastingDirector})
         data = json.loads(res.data)
         self.assertEqual(data['success'], True)
     
