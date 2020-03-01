@@ -3,7 +3,7 @@ from flask import Flask, request, jsonify, abort
 from sqlalchemy import exc
 import json
 from flask_cors import CORS
-from database.models import db_drop_and_create_all, setup_db, Movie, Actor
+from database.models import db_drop_and_create_all, setup_db, Movie, Actor, db
 from auth.auth import AuthError, requires_auth
 from datetime import datetime
 
